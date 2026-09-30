@@ -329,3 +329,14 @@ Los identificadores no se reutilizan ni se renumeran. Cuando se acepta un cambio
 | 0.3 | 22/09/2026 | Se elimina la columna `Fuente` de las tablas de requisitos; la referencia común queda en la cabecera y la procedencia de cambios en este historial. | — | Decisión de estructura del catálogo |
 | 0.2 | 22/09/2026 | Se incorpora UR-01 y sus 24 FR asociados, volcados desde el catálogo canónico de Notion v2.0. | UR-01, FR-001–FR-014, FR-188–FR-194, FR-213–FR-215 | Catálogo canónico de requisitos, v2.0 |
 | 0.1 | 22/09/2026 | Se crea la plantilla inicial. | — | Decisión de estructura de la SRS |
+
+## 5. Requisitos no funcionales
+
+| ID | Tipo | Requisito no funcional | Ámbito | Fuente | Método de comprobación |
+| --- | --- | --- | --- | --- | --- |
+| NFR-01 | NFR-Q | El sistema debe garantizar un tiempo de respuesta inferior a 2 segundos para la búsqueda de recetas y carga del catálogo bajo condiciones normales de uso. | G | Documento de Visión y Alcance / Acta A3 | Pruebas de rendimiento midiendo el tiempo de carga con herramientas de automatización. |
+| NFR-02 | NFR-R | La plataforma debe desarrollarse como una aplicación web accesible mediante navegadores estándar modernos (Chrome, Firefox, Edge, Safari). | G | Acta de acuerdos técnicos y operativos | Pruebas de compatibilidad cruzada en los navegadores especificados. |
+| NFR-03 | NFR-I | El idioma principal de la interfaz de usuario debe ser exclusivamente el español. | G | Acta de captura de requisitos generales | Inspección visual de la interfaz de usuario. |
+| NFR-04 | NFR-I | El sistema debe permitir la autenticación de usuarios mediante cuentas externas de Google. | G | FR-006 / FR-018 / Acta de acuerdos técnicos y operativos | Pruebas funcionales de inicio de sesión con Google OAuth. |
+| NFR-05 | NFR-Q | El sistema debe cumplir con la normativa vigente de protección de datos (RGPD) en cuanto al cifrado de contraseñas y la gestión de información personal. | G | Acta de acuerdos técnicos y operativos | Auditoría de seguridad y revisión de políticas de almacenamiento de datos. |
+| NFR-06 | NFR-Q | La interfaz de usuario debe cumplir con pautas básicas de accesibilidad (contraste de colores y navegación por teclado) para facilitar su uso por pacientes con EII. | G | Documento de Visión y Alcance | Evaluación de accesibilidad mediante herramientas de análisis estático y dinámico. |
