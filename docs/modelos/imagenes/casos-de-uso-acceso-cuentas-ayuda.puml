@@ -1,0 +1,75 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam usecase {
+  BackgroundColor #FFFFFF
+  BorderColor #333333
+}
+skinparam actorStyle awesome
+title Proyecto Simbiosis - Casos de uso: acceso, cuentas y ayuda
+
+actor "Visitante" as VIS
+actor "Usuario registrado" as USR
+actor "Paciente" as PAC
+actor "Cuidador" as CUI
+actor "Nutricionista" as NUT
+actor "Coordinador" as COO
+actor "Servicio de correo" as MAIL <<sistema externo>>
+
+USR <|-- PAC
+USR <|-- CUI
+USR <|-- NUT
+
+rectangle "Simbiosis" {
+  package "Registro y condiciones por perfil (UR-01)" {
+    usecase "UC-01\nRegistrarse" as UC01
+    usecase "UC-02\nVerificar correo\nelectrónico" as UC02
+    usecase "UC-03\nSolicitar perfil de\nnutricionista" as UC03
+    usecase "UC-04\nSolicitar perfil de\ncuidador" as UC04
+    usecase "UC-05\nAutorizar relación\nde cuidado" as UC05
+  }
+  package "Acceso (UR-02)" {
+    usecase "UC-06\nIniciar sesión" as UC06
+    usecase "UC-07\nRestablecer\ncontraseña" as UC07
+  }
+  package "Cuenta propia (UR-03)" {
+    usecase "UC-08\nActualizar perfil\ny preferencias" as UC08
+    usecase "UC-09\nEliminar cuenta propia" as UC09
+  }
+  package "Gestión básica de cuentas (UR-13)" {
+    usecase "UC-10\nListar cuentas" as UC10
+    usecase "UC-11\nAprobar cuenta de cuidador\no nutricionista" as UC11
+    usecase "UC-12\nSuspender cuenta" as UC12
+    usecase "UC-13\nEliminar cuenta\nde usuario" as UC13
+  }
+  package "Ayuda y bienvenida (UR-12)" {
+    usecase "UC-14\nConsultar guía\ninteractiva" as UC14
+    usecase "UC-15\nSeguir recorrido\nde bienvenida" as UC15
+  }
+}
+
+VIS --> UC01
+VIS --> UC02
+VIS --> UC06
+VIS --> UC07
+VIS --> UC14
+
+PAC --> UC05
+USR --> UC08
+USR --> UC09
+USR --> UC14
+USR --> UC15
+
+COO --> UC10
+COO --> UC11
+COO --> UC12
+COO --> UC13
+
+UC01 --> MAIL
+UC07 --> MAIL
+
+UC03 .up.> UC01 : <<extend>>
+UC04 .up.> UC01 : <<extend>>
+UC07 .up.> UC06 : <<extend>>
+@enduml
