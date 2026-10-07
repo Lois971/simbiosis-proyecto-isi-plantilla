@@ -31,7 +31,7 @@ Registra los roles externos que participan en las funciones representadas. Un ac
 | Nombre del actor | Rol que representa |
 | --- | --- |
 | Visitante | Persona sin sesión iniciada que se registra, verifica su correo, inicia sesión o restablece su contraseña. |
-| Usuario registrado | Persona con sesión iniciada. Es un actor abstracto: las personas con sesión son siempre Paciente, Cuidador o Nutricionista. |
+| Usuario registrado | Persona con sesión iniciada.Es un actor abstracto: quien lo usa actúa siempre como Paciente, Cuidador o Nutricionista.|
 | Paciente | Usuario registrado que autoriza las relaciones de cuidado que le afectan. |
 | Cuidador | Usuario registrado que indica los pacientes a los que cuidará. |
 | Nutricionista | Usuario registrado que aporta documentación profesional para su aprobación. |
