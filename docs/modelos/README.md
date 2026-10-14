@@ -24,9 +24,10 @@ Para los diagramas de casos de uso, el tipo es `casos-de-uso`. El nombre común 
 
 | Imagen | Nombre |
 | --- | --- |
-| Vista de acceso, cuentas y ayuda de E1 | `casos-de-uso-acceso-cuentas-ayuda.png` |
-| Vista de salud y recetas | `casos-de-uso-salud-recetas.png` |
+| Vista de acceso, cuentas y ayuda de E1 | [`casos-de-uso-acceso-cuentas-ayuda-e1.png`](imagenes/casos-de-uso-acceso-cuentas-ayuda-e1.png) |
+| Vista de salud y recetas de E2 | [`casos-de-uso-salud-recetas-e2.png`](imagenes/casos-de-uso-salud-recetas-e2.png) |
 | Vista separada de actores del ámbito de E1, si se necesita | `casos-de-uso-acceso-cuentas-ayuda-actores.png` |
+
 
 Si necesitas más de una imagen para el mismo tipo y ámbito, añade un detalle descriptivo al final. No uses nombres como `imagen1`, `diagrama-final` o `copia-2`. El detalle debe explicar qué distingue esa imagen. No es necesario dividir una vista para utilizar ese sufijo.
 
