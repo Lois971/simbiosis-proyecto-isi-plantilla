@@ -223,25 +223,44 @@ Los apartados 6.1 y 6.2 corresponden a las descripciones detalladas de UC-05 y U
 
 ### 6.1 Descripción detallada UC-05 — Actualizar perfil
 
-**Identificador y nombre del caso de uso:** [Indica el caso.]
+**Escenario principal de éxito:**
+1. La persona usuaria solicita editar su perfil.
+2. El sistema muestra los valores guardados: nombre completo, teléfono, dirección postal y preferencias dietéticas como datos editables; alias y correo electrónico solo como datos de consulta.
+3. La persona usuaria modifica uno o varios datos editables. Puede seleccionar ninguna, una o varias preferencias dietéticas (vegana, sin gluten, baja en carbohidratos).
+4. La persona usuaria solicita guardar los cambios.
+5. El sistema comprueba que el nombre completo y el teléfono no están vacíos y que el teléfono cumple las reglas de formato del registro, incluidos los prefijos internacionales.
+6. El sistema guarda conjuntamente los cambios.
+7. El sistema confirma que el perfil se ha actualizado.
 
-**Objetivo:** [Explica qué resultado pretende obtener el participante.]
+**Extensiones (flujos alternativos):**
 
-**Participantes:** [Indica el actor principal y los actores de apoyo, si los hay.]
+*.a. En cualquier momento antes de que el guardado se complete, la persona usuaria cancela la edición:
+1. El sistema descarta los cambios de esa edición.
+2. El caso de uso termina y el perfil conserva los valores anteriores.
 
-**Precondiciones:** [Indica qué se da por cumplido al comenzar. Las comprobaciones que realiza el sistema pertenecen al flujo.]
+5.a. Algún dato no es válido (nombre completo o teléfono vacíos, o formado solo por espacios, o teléfono con formato incorrecto):
+1. El sistema identifica el campo afectado y explica qué debe corregirse.
+2. El sistema conserva los valores introducidos y no guarda ningún cambio.
+3. El flujo vuelve al paso 3 para que la persona corrija los datos.
 
-**Inicio:** [Indica qué acción o suceso inicia el caso.]
+6.a. El sistema no puede guardar los cambios:
+1. El sistema informa del problema y no confirma la actualización.
+2. El sistema conserva los valores introducidos y los datos guardados permanecen sin cambios.
+3. Si la persona reintenta el guardado, el flujo vuelve al paso 4. Si cancela, se aplica la extensión *.a.
 
-**Escenario principal de éxito:** [Describe la secuencia entre los participantes y el sistema.]
+**Postcondiciones:**
+- Con éxito: los cambios válidos quedan guardados conjuntamente, el perfil muestra los nuevos valores y la persona ha recibido la confirmación. El alias, el correo electrónico y los datos de salud no se modifican.
+- Si la persona cancela: se descartan los cambios y el perfil conserva los valores anteriores.
+- Si hay datos no válidos o falla el guardado: no se guarda ningún cambio y los datos guardados permanecen como estaban.
 
-**Extensiones (flujos alternativos):** [Vincula cada variación a un paso. Indica cómo continúa o termina.]
+**Reglas y NFR pertinentes:**
+- FR-019 y UR-03 del catálogo canónico: actualización de información personal y preferencias; alias y correo no modificables.
+- Acta general, apartado 1.1: nombre completo y teléfono obligatorios; dirección postal opcional.
+- Acta de UR-01, apartado 2.1: teléfono obligatorio con prefijos internacionales.
+- Acta de UC-05 v1.1: preferencias opcionales y distintas de los datos de salud.
+- NFR del apartado 5 del modelo: se conservan los que ya figuran asociados a este caso.
 
-**Postcondiciones:** [Indica qué queda establecido con éxito y qué se conserva o cambia si el caso termina sin éxito o se cancela. Una consulta no requiere modificar datos para alcanzar su objetivo.]
-
-**Reglas y NFR pertinentes:** [Remite a los requisitos y actas que condicionan el comportamiento.]
-
-**Preguntas abiertas:** [Registra solo las cuestiones necesarias que las fuentes no resuelvan. Si no hay preguntas para el alcance descrito, indícalo.]
+**Preguntas abiertas:** Ninguna para el alcance descrito.
 
 ### 6.2 Descripción detallada UC-21 — Buscar recetas
 
