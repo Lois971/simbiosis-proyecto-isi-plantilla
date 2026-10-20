@@ -6,7 +6,8 @@ Modelos y diagramas propios del Proyecto Simbiosis (por ejemplo, modelos de domi
 
 | Documento | Finalidad |
 | --- | --- |
-| [Modelo de casos de uso](modelo-casos-de-uso.md) | Plantilla que se completa y revisa a medida que avanza el modelado. |
+| [Plantilla del modelo de casos de uso](plantilla-modelo-casos-de-uso.md) | Estructura e instrucciones reutilizables, que se conservan sin cumplimentar. |
+| [Modelo de casos de uso](modelo-casos-de-uso.md) | Documento de trabajo acumulado que incorpora los resultados revisados de E1 y E2. |
 
 Cada modelo nuevo debe añadirse a esta carpeta en Markdown (o como diagrama embebido en Markdown) y listarse en la tabla anterior.
 
@@ -18,16 +19,15 @@ Guarda las imágenes de los diagramas en `docs/modelos/imagenes/`. Utiliza este 
 tipo-de-diagrama-ambito.png
 ```
 
-El tipo identifica el diagrama. El ámbito identifica las funciones, el escenario o los elementos representados. Utiliza minúsculas, sin tildes, eñes ni espacios. Separa las palabras con guiones. No añadas el nombre del estudiante, el código de la práctica, la iteración, la fecha ni un número de versión.
+El tipo identifica el diagrama. El ámbito identifica las funciones, el escenario o los elementos representados. Utiliza minúsculas, sin tildes, eñes ni espacios. Separa las palabras con guiones. No añadas el nombre del estudiante, el código de la práctica, la fecha ni un número de versión. Las vistas de E1 y E2 añaden el sufijo de la iteración al ámbito, conforme a los nombres siguientes.
 
-Para los diagramas de casos de uso, el tipo es `casos-de-uso`. El nombre común de la primera vista de E1 es `casos-de-uso-acceso-cuentas-ayuda.png`.
+Para los diagramas de casos de uso, el tipo es `casos-de-uso`. El nombre común de la primera vista de E1 es `casos-de-uso-acceso-cuentas-ayuda-e1.png`.
 
 | Imagen | Nombre |
 | --- | --- |
-| Vista de acceso, cuentas y ayuda de E1 | [`casos-de-uso-acceso-cuentas-ayuda-e1.png`](imagenes/casos-de-uso-acceso-cuentas-ayuda-e1.png) |
-| Vista de salud y recetas de E2 | [`casos-de-uso-salud-recetas-e2.png`](imagenes/casos-de-uso-salud-recetas-e2.png) |
-| Vista separada de actores del ámbito de E1, si se necesita | `casos-de-uso-acceso-cuentas-ayuda-actores.png` |
-
+| Vista de acceso, cuentas y ayuda de E1 | `casos-de-uso-acceso-cuentas-ayuda-e1.png` |
+| Vista de salud y recetas de E2 | `casos-de-uso-salud-recetas-e2.png` |
+| Vista separada de actores del ámbito de E1, si se necesita | `casos-de-uso-acceso-cuentas-ayuda-actores-e1.png` |
 
 Si necesitas más de una imagen para el mismo tipo y ámbito, añade un detalle descriptivo al final. No uses nombres como `imagen1`, `diagrama-final` o `copia-2`. El detalle debe explicar qué distingue esa imagen. No es necesario dividir una vista para utilizar ese sufijo.
 
@@ -38,6 +38,14 @@ El formato habitual de las imágenes es PNG. Si una actividad admite otro format
 La convención se ampliará en esta guía cuando se incorporen otros tipos de diagramas. Por ejemplo, podrá usar los tipos `clases`, `secuencia` o `actividad`, seguidos del ámbito correspondiente. Estos ejemplos no establecen tareas para las próximas prácticas.
 
 Los documentos Markdown utilizan enlaces relativos. Desde un archivo situado directamente en `docs/modelos/`, el enlace a una imagen comienza por `imagenes/`.
+
+## Uso de la plantilla base
+
+La plantilla base se conserva en `plantilla-modelo-casos-de-uso.md`. Para iniciar un modelo, copia su contenido en `modelo-casos-de-uso.md` y completa ese documento. El modelo del repositorio contiene el resultado acumulado del modelado de actores y casos de uso de E1 y E2, con sus diagramas y respaldo en los requisitos. La versión vigente es v2.4. Las descripciones detalladas de UC-05 y UC-21 están pendientes de especificación. El apartado 6 enlaza las actas aprobadas de UC-05 y UC-21 y delimita el alcance de sus descripciones.
+
+La vista de E1 se conserva como `imagenes/casos-de-uso-acceso-cuentas-ayuda-e1.png`. La vista de E2 se conserva como `imagenes/casos-de-uso-salud-recetas-e2.png`.
+
+Una vez iniciado el modelado, continúa sobre el documento de trabajo. No vuelvas a copiar la plantilla sobre un modelo que ya contiene resultados. Consulta la plantilla cuando necesites sus instrucciones o el esquema de un apartado. Las mejoras de la estructura o las instrucciones se realizan en la plantilla; los actores, casos, diagramas y resultados del proyecto se incorporan al modelo.
 
 ## Versionado del modelo de casos de uso
 
@@ -50,3 +58,7 @@ Durante una iteración puede haber varios commits. Al cerrarla, identifica el co
 La versión visible del documento, la iteración y el commit indican cosas diferentes. La versión identifica una revisión del documento. La iteración sitúa esa revisión en el proceso. El commit permite recuperar los archivos exactos. No es necesario cambiar la versión visible por cada corrección pequeña.
 
 Si se declara una línea base formal, se identifica mediante una etiqueta de Git y una entrada en el [historial de líneas base](../../CHANGELOG.md), conforme a las convenciones del repositorio. Cerrar una iteración no declara automáticamente una línea base. Para el trabajo ordinario del modelo basta con identificar el commit correspondiente.
+
+## Esquema de las descripciones
+
+La plantilla base v1.6 y el apartado 6 del modelo acumulado E2 v2.4 comparten el esquema de descripción. Utilizan Precondiciones y Postcondiciones. El estado y el alcance de las descripciones detalladas se registran en el modelo.
