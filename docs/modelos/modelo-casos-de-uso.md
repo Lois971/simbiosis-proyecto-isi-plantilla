@@ -2,7 +2,7 @@
 
 | Versión | Fecha | Estado |
 | --- | --- | --- |
-| 2.4 | 19/10/2026 | Revisado |
+| 2.5 | 20/10/2026 | Vigente |
 
 **Iteración de referencia:** E2. Este documento recoge el modelo acumulado después de incorporar la vista de salud y recetas.
 
